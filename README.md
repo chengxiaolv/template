@@ -27,4 +27,10 @@ npm run e2e
 npm test
 ```
 
+```
+
+# 集成 vuex  scss  mockjs 全局过滤器 全局工具 封装axios 模板功能
+
+```
+
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
