@@ -14,3 +14,18 @@
 </body>
 
 </html>
+<script>
+    (function(doc, win) { //设置rem值。
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function() {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                //这里是假设在750px宽度设计稿的情况下，1rem = 30px；
+                docEl.style.fontSize = 30 * (clientWidth / 750) + 'px';
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>

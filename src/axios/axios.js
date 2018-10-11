@@ -18,7 +18,7 @@
 import axios from 'axios'; // 引入axios
 import QS from 'qs'; // 引入qs模块，用来序列化post类型的数据，后面会提到
 // vant的Message提示框组件，大家可根据自己的ui组件更改。
-import { Message } from 'element-ui';
+// import { Message } from 'element-ui';
 import router from "../router"; //引入，为了跳转登录页。
 
 // 环境的切换
@@ -120,11 +120,11 @@ axios.interceptors.response.use(
                     // 清除本地token和清空vuex中token对象
                     // 跳转登录页面
                 case 403:
-                    Message({
-                        message: '登录过期，请重新登录',
-                        duration: 1000,
-                        forbidClick: true
-                    });
+                    // Message({
+                    //     message: '登录过期，请重新登录',
+                    //     duration: 1000,
+                    //     forbidClick: true
+                    // });
                     // 清除token
                     localStorage.removeItem('token');
                     store.commit('loginSuccess', null);
@@ -141,19 +141,19 @@ axios.interceptors.response.use(
 
                     // 404请求不存在
                 case 404:
-                    Message({
-                        message: '网络请求不存在',
-                        duration: 1500,
-                        forbidClick: true
-                    });
+                    // Message({
+                    //     message: '网络请求不存在',
+                    //     duration: 1500,
+                    //     forbidClick: true
+                    // });
                     break;
                     // 其他错误，直接抛出错误提示
                 default:
-                    Message({
-                        message: error.response.data.message,
-                        duration: 1500,
-                        forbidClick: true
-                    });
+                    // Message({
+                    //     message: error.response.data.message,
+                    //     duration: 1500,
+                    //     forbidClick: true
+                    // });
             }
             return Promise.reject(error.response);
         }

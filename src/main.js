@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from "./vuex/store"; //引入vuex的集中块。
 
-require('./mock.js') //引入mockjs。
+require('./mockjs.js') //引入mockjs。
 
 import https from "./axios/axios.js"; //引入封装的axios  
 Vue.prototype.https = https; //引入到原型上。
@@ -16,7 +16,12 @@ Object.keys(filters).forEach(key => {
 })
 
 import utils from "./utils/utils.js"; //引入封装的全局方法
-Vue.prototype.https = utils; //将全局方法注册到原型上。
+Vue.prototype.utils = utils; //将全局方法注册到原型上。
+
+import Mint from 'mint-ui';
+Vue.use(Mint); //引入和使用mint-ui
+import 'mint-ui/lib/style.css';
+
 
 Vue.config.productionTip = false
 
